@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\LoggerServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+        App\Providers\TranslationServiceProvider::class,
 
     ],
 
