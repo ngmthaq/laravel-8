@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div id="app"> @yield('body')</div>
+    @yield('body')
 
     <script>
         window.translation = {!! $translation !!};
