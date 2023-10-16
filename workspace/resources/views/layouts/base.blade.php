@@ -22,6 +22,8 @@
 <body>
     @yield('body')
 
+    @include('partials.toast')
+
     <script>
         window.translation = {!! $translation !!};
         window.translationJson = {!! $translationJson !!};
