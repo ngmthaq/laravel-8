@@ -20,9 +20,11 @@
 </head>
 
 <body>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
     @yield('body')
 
-    @include('partials.toast')
+    <div class="toast-container position-fixed top-0 end-0" id="toast-stack"></div>
 
     <script>
         window.translation = {!! $translation !!};
@@ -30,6 +32,54 @@
     </script>
 
     <script src="{{ asset('js/app.js') }}"></script>
+
+    @if (session('toast_primary'))
+        <script>
+            appendToast("{!! session('toast_primary') !!}", "primary");
+        </script>
+    @endif
+
+    @if (session('toast_secondary'))
+        <script>
+            appendToast("{!! session('toast_secondary') !!}", "secondary");
+        </script>
+    @endif
+
+    @if (session('toast_success'))
+        <script>
+            appendToast("{!! session('toast_success') !!}", "success");
+        </script>
+    @endif
+
+    @if (session('toast_info'))
+        <script>
+            appendToast("{!! session('toast_info') !!}", "info");
+        </script>
+    @endif
+
+    @if (session('toast_warning'))
+        <script>
+            appendToast("{!! session('toast_warning') !!}", "warning");
+        </script>
+    @endif
+
+    @if (session('toast_error'))
+        <script>
+            appendToast("{!! session('toast_error') !!}", "error");
+        </script>
+    @endif
+
+    @if (session('toast_light'))
+        <script>
+            appendToast("{!! session('toast_light') !!}", "light");
+        </script>
+    @endif
+
+    @if (session('toast_dark'))
+        <script>
+            appendToast("{!! session('toast_dark') !!}", "dark");
+        </script>
+    @endif
 
     @stack('js')
 </body>

@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.hello');
 });
+
+Route::get('/flash', function () {
+    return response()->redirectTo("/")->with("toast_primary", "Test");
+});
