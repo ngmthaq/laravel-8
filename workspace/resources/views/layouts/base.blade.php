@@ -20,19 +20,41 @@
 </head>
 
 <body>
+    {{-- No Script --}}
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
 
+    {{-- Body --}}
     @yield('body')
 
+    {{-- Toast Container --}}
     <div class="toast-container position-fixed top-0 end-0" id="toast-stack"></div>
 
+    {{-- Confirm Container --}}
+    <div class="modal fade" id="staticBackdrop">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header py-2">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer p-1">
+                    <button type="button" class="btn btn-sm btn-secondary deny" data-i18n="message.deny"></button>
+                    <button type="button" class="btn btn-sm btn-primary accept" data-i18n="message.accept"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Translation Configs --}}
     <script>
         window.translation = {!! $translation !!};
         window.translationJson = {!! $translationJson !!};
     </script>
 
+    {{-- Webpack compile JS ES6 --}}
     <script src="{{ asset('js/app.js') }}"></script>
 
+    {{-- Open Toast From Controller --}}
     @if (session('toast_primary'))
         <script>
             appendToast("{!! session('toast_primary') !!}", "primary");
@@ -81,6 +103,7 @@
         </script>
     @endif
 
+    {{-- JS Stacks --}}
     @stack('js')
 </body>
 

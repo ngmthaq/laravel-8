@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 export const __ = (key, replace = {}) => {
     let translation = key
         .split(".")
@@ -18,4 +20,10 @@ export const __ = (key, replace = {}) => {
     }
 
     return translation;
+};
+
+export const translateElements = () => {
+    $("[data-i18n]").each(function () {
+        $(this).text(__($(this).data("i18n")));
+    });
 };
