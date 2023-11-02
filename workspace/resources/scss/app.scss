@@ -3,3 +3,26 @@
 @import "./mixins";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+.spinner-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    z-index: $z-index-spinner-loading;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transparent-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: $zindex-modal;
+}

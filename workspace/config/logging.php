@@ -64,7 +64,7 @@ return [
 
         'auth' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/query.log'),
+            'path' => storage_path('logs/auth.log'),
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 7,
         ],

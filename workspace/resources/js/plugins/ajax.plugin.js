@@ -1,4 +1,4 @@
-import $ from "jquery";
+import { $ } from "./jquery.plugin";
 
 export class Ajax {
     $ = $;

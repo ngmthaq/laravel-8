@@ -1,4 +1,4 @@
-import $ from "jquery";
+import { $ } from "./jquery.plugin";
 
 export const __ = (key, replace = {}) => {
     let translation = key

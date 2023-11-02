@@ -23,27 +23,37 @@
     {{-- No Script --}}
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
 
-    {{-- Body --}}
-    @yield('body')
+    {{-- Application Body --}}
+    <div id="app">
+        @yield('body')
+    </div>
 
     {{-- Toast Container --}}
     <div class="toast-container position-fixed top-0 end-0" id="toast-stack"></div>
 
     {{-- Confirm Container --}}
-    <div class="modal fade" id="staticBackdrop">
+    <div class="modal fade" id="static-backdrop">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header py-2">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+                    <h1 class="modal-title fs-5" id="static-backdrop-label"></h1>
                 </div>
                 <div class="modal-body"></div>
                 <div class="modal-footer p-1">
-                    <button type="button" class="btn btn-sm btn-secondary deny" data-i18n="message.deny"></button>
-                    <button type="button" class="btn btn-sm btn-primary accept" data-i18n="message.accept"></button>
+                    <button type="button" class="btn btn-sm btn-secondary deny">{{ __('message.deny') }}</button>
+                    <button type="button" class="btn btn-sm btn-primary accept">{{ __('message.accept') }}</button>
                 </div>
             </div>
         </div>
     </div>
+
+    {{-- Spinner Loading Container --}}
+    <div class="spinner-loading" style="display: none">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    {{-- Transparent Modal --}}
+    <div class="transparent-modal" style="display: none"></div>
 
     {{-- Translation Configs --}}
     <script>

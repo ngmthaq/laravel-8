@@ -1,3 +1,6 @@
+import { bootstrap } from "./bootstrap.plugin";
+import { $ } from "./jquery.plugin";
+
 export class Toasts {
     template = `
         <div class="toast mt-1 me-1 mb-1 text-bg-{{ variant }}" id="toast-{{ id }}" role="alert" aria-live="assertive" aria-atomic="true">
