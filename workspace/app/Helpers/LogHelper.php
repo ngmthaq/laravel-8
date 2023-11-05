@@ -21,6 +21,11 @@ final class LogHelper
         Log::channel("auth")->info($message, $context);
     }
 
+    final public static function curl(string $message, array $context = [])
+    {
+        Log::channel("curl")->info($message, $context);
+    }
+
     final public static function debug(string $message, array $context = [])
     {
         Log::channel("debug")->debug($message, $context);

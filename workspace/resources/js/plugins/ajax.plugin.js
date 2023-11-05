@@ -19,7 +19,6 @@ export class Ajax {
     }
 
     fetch(url, formData, method, configs) {
-        console.log(formData);
         return new Promise((resolve) => {
             $.ajax({
                 url: url,
@@ -59,6 +58,7 @@ export class Ajax {
 
     formData(data) {
         let formData = null;
+
         if (typeof data === "object" && !Array.isArray(data)) {
             formData = new FormData();
             for (const key in data) {
@@ -72,32 +72,33 @@ export class Ajax {
         } else {
             throw new Error("Invalid type of data");
         }
+
         return formData;
     }
 
-    get({ url, data = {}, configs = {} }) {
+    get(url, data = {}, configs = {}) {
         return this.fetch(url, data, "GET", configs);
     }
 
-    post({ url, data = {}, configs = {} }) {
+    post(url, data = {}, configs = {}) {
         return this.fetch(url, this.formData(data), "POST", configs);
     }
 
-    put({ url, data = {}, configs = {} }) {
+    put(url, data = {}, configs = {}) {
         let formData = this.formData(data);
         formData.append("_method", "PUT");
 
         return this.fetch(url, formData, "POST", configs);
     }
 
-    patch({ url, data = {}, configs = {} }) {
+    patch(url, data = {}, configs = {}) {
         let formData = this.formData(data);
         formData.append("_method", "PATCH");
 
         return this.fetch(url, formData, "POST", configs);
     }
 
-    delete({ url, data = {}, configs = {} }) {
+    delete(url, data = {}, configs = {}) {
         let formData = this.formData(data);
         formData.append("_method", "DELETE");
 

@@ -62,6 +62,13 @@ return [
             'days' => 7,
         ],
 
+        'curl' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/curl.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => 7,
+        ],
+
         'auth' => [
             'driver' => 'daily',
             'path' => storage_path('logs/auth.log'),

@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\CurlHelper;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/flash', function () {
+    CurlHelper::get('https://jsonplaceholder.typicode.com/posts/1', ["a" => "b"]);
     return response()->redirectTo("/")->with("toast_primary", "Test");
 });

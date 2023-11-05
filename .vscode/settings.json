@@ -1,6 +1,10 @@
 {
     "cSpell.words": [
         "autohide",
+        "FAILONERROR",
+        "POSTFIELDS",
+        "VERIFYHOST",
+        "VERIFYPEER",
         "zindex"
     ]
 }
