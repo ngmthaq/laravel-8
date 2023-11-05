@@ -16,12 +16,26 @@
 @push('js')
     <script>
         $(document).ready(function() {
-            $("button#upload").on("click", function() {
+            $("button#upload").on("click", async function() {
                 $(this).startButtonLoading(true, "Uploading");
-
-                setTimeout(() => {
-                    $(this).startButtonLoading(false);
-                }, 3000);
+                const ajax = new Ajax();
+                const response1 = await ajax.get({
+                    url: "https://jsonplaceholder.typicode.com/posts/1",
+                    data: {
+                        a: "b"
+                    }
+                });
+                console.log(response1.data);
+                const response2 = await ajax.post({
+                    url: "https://jsonplaceholder.typicode.com/posts",
+                    data: {
+                        title: 'foo',
+                        body: 'bar',
+                        userId: 1,
+                    }
+                });
+                console.log(response2.data);
+                $(this).startButtonLoading(false);
             });
 
         });
