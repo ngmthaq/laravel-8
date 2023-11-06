@@ -36,13 +36,13 @@ export const openConfirmDialog = ({
             modal.hide();
         });
 
-    $("#static-backdrop").find(".modal-body").text(message);
+    $("#static-backdrop").find(".custom-modal-message").text(message);
 
     if (title) {
-        $("#static-backdrop").find(".modal-title").text(title);
-        $("#static-backdrop").find(".modal-header").show();
+        $("#static-backdrop").find(".custom-modal-title").text(title);
+        $("#static-backdrop").find(".custom-modal-title").show();
     } else {
-        $("#static-backdrop").find(".modal-header").hide();
+        $("#static-backdrop").find(".custom-modal-title").hide();
     }
 
     modal.show();

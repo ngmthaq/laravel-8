@@ -34,14 +34,21 @@
     {{-- Confirm Container --}}
     <div class="modal fade" id="static-backdrop">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header py-2">
-                    <h1 class="modal-title fs-5" id="static-backdrop-label"></h1>
+            <div class="modal-content rounded-3 shadow">
+                <div class="modal-body p-4 text-center">
+                    <h5 class="custom-modal-title mb-0"></h5>
+                    <p class="custom-modal-message mb-0"></p>
                 </div>
-                <div class="modal-body"></div>
-                <div class="modal-footer p-1">
-                    <button type="button" class="btn btn-sm btn-secondary deny">{{ __('message.deny') }}</button>
-                    <button type="button" class="btn btn-sm btn-primary accept">{{ __('message.accept') }}</button>
+                <div class="modal-footer flex-nowrap p-0">
+                    <button type="button"
+                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end accept">
+                        <strong>{{ __('message.accept') }}</strong>
+                    </button>
+                    <button type="button"
+                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 deny"
+                        data-bs-dismiss="modal">
+                        {{ __('message.deny') }}
+                    </button>
                 </div>
             </div>
         </div>
@@ -115,6 +122,13 @@
 
     {{-- JS Stacks --}}
     @stack('js')
+
+    <script>
+        openConfirmDialog({
+            message: "You can always change your mind in your account settings.",
+            title: "Enable this setting?"
+        });
+    </script>
 </body>
 
 </html>
