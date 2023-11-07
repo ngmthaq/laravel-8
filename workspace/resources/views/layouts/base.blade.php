@@ -36,16 +36,16 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content rounded-3 shadow">
                 <div class="modal-body p-4 text-center">
-                    <h5 class="custom-modal-title mb-0"></h5>
+                    <h5 class="custom-modal-title mb-2"></h5>
                     <p class="custom-modal-message mb-0"></p>
                 </div>
                 <div class="modal-footer flex-nowrap p-0">
                     <button type="button"
-                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end accept">
+                        class="btn btn-lg btn-link fs-6 text-decoration-none py-3 m-0 rounded-0 border-end w-100 accept">
                         <strong>{{ __('message.accept') }}</strong>
                     </button>
                     <button type="button"
-                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 deny"
+                        class="btn btn-lg btn-link fs-6 text-decoration-none py-3 m-0 rounded-0 w-100 deny"
                         data-bs-dismiss="modal">
                         {{ __('message.deny') }}
                     </button>
@@ -126,7 +126,8 @@
     <script>
         openConfirmDialog({
             message: "You can always change your mind in your account settings.",
-            title: "Enable this setting?"
+            title: "Enable this setting?",
+            type: "alert"
         });
     </script>
 </body>
